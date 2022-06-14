@@ -1,0 +1,29 @@
+def f(n):
+    if n<3:
+        return 2
+    elif n>2 and n%2==0:
+        return f(n-2)+f(n-1)-n
+    else:
+        return f(n-1)-f(n-2)+2*n
+print(f(32))  # значение функции(32)
+
+k=0
+for n in range(1,1000):
+  if f(n)==3:
+      k+=1
+print(k)           # сколько n что f(n)=3
+
+if f(n)==5:
+  print(n)
+  break           # наименьшее возможное n,для которого f(n)=5
+  
+  
+  
+ def F(a,b):
+if a==0:
+  return b
+elif a>0:
+  return F(a//10,10*b+(a%10))
+if F(a,0)==1248163264:
+  print(a)
+  break          # подбор а   
