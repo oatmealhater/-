@@ -17,3 +17,16 @@ for i in range(0,len(a)-2):
         if (a[i]+a[i+1])>m:
             m=a[i]+a[i+1]
 print(k,m)
+
+
+Нет последовательносити-два цикла
+a=[int(x)for x in open('17.txt')]
+k=0
+m=0
+for i in range(0,len(a)-1):
+for j in range(i+1,len(a)):
+if (a[i]+a[j])%2==1 or (a[i]*a[j])%5==0:
+k+=1
+if (a[i]+a[j])>m:
+m=(a[i]+a[j])
+print(k,m)
