@@ -1,0 +1,15 @@
+slovo = ""
+k = 0
+ish = "НАСТЯ"
+for a in ish:
+    for b in ish:
+        for c in ish:
+            for d in ish:
+                for e in ish:
+                    for f in ish:
+                        for g in ish:
+                            slovo = a + b + c + d + e + f + g
+if (slovo.count("Н")==2) and (slovo.count("А") >= 1):
+    k += 1
+slovo = ""
+print(k)
