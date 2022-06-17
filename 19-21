@@ -1,0 +1,19 @@
+def f(k1, k2, h): # смотреть по ходам игры
+    if k1 + k2 <= 20 and h == 2 or h == 4: # в 21 по условию еще ход
+        return True
+    if k1 + k2 <= 20 and h != 4:
+        return False
+    if k1 + k2 != 20 and h == 4:
+        return False
+        #cмотреть по ходам игроков
+    if h == 0: #Петя
+        return f(k1 - 1, k2, h + 1) and f(k1, k2 - 1, h + 1) and f(k1 // 2, k2, h + 1) and f(k1, k2 // 2, h + 1) # and-проигрывает
+    if h == 1:  #Ваня
+        return f(k1 - 1, k2, h + 1) or f(k1, k2 - 1, h + 1) or f(k1 // 2, k2, h + 1) or f(k1, k2 // 2, h + 1)   # or-выигрывает
+    if h == 2:
+        return f(k1 - 1, k2, h + 1) and f(k1, k2 - 1, h + 1) and f(k1 // 2, k2, h + 1) and f(k1, k2 // 2, h + 1) #20
+    if h == 3:
+        return f(k1 - 1, k2, h + 1) or f(k1, k2 - 1, h + 1) or f(k1 // 2, k2, h + 1) or f(k1, k2 // 2, h + 1)  #21
+for s in range(10, 100):
+    if f(10, s, 0):
+        print(s)       # Первый неудачный-все or;если не сказано какой,то or потом and.
