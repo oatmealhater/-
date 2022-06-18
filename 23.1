@@ -1,0 +1,16 @@
+
+
+def F(a, b):
+    global n
+    if a > b:
+        return 0
+    if a == b:
+        n = n + 1
+    if a < b:
+        F(a+2, b)
+        F(a*5, b)
+n = 0
+a = 2
+b = 50
+F(a, b)
+print(n)
